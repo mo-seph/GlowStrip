@@ -70,3 +70,31 @@ void GlowStrip::glowRGBWRel(AreaRGBW g, bool additive) {
     else setRGBW(i,interpolateRGBW(base,g.color,amount));
   }
 };
+
+/*
+void colorRGBWFromJson(JsonVariant d, FRGBW &tmpCol) {
+  if( d.containsKey("r")) tmpCol.r = d["r"];
+  if( d.containsKey("g")) tmpCol.g = d["g"];
+  if( d.containsKey("b")) tmpCol.b = d["b"];
+  if( d.containsKey("w")) tmpCol.w = d["w"];
+};
+
+void colorRGBWToJson(JsonVariant d,FRGBW col) {
+  d["r"] = col.r;
+  d["g"] = col.g;
+  d["b"] = col.b;
+  d["w"] = col.w;
+}
+
+void areaRGBWFromJson(JsonVariant d, AreaRGBW &area) {
+  colorRGBWFromJson(d, area.color);
+  if( d.containsKey("centre")) area.centre = d["centre"];
+  if( d.containsKey("width")) area.width = d["width"];
+};
+
+void areaRGBWToJson(JsonVariant d,AreaRGBW area) {
+  colorRGBWToJson(d,area.color);
+  d["centre"] = area.centre;
+  d["width"] = area.width;
+}
+*/

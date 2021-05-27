@@ -25,3 +25,5 @@ It might support more complex commands:
 - spatial interpolation
 - clearRGB
 - clearWhite
+
+And some thing that can add to the existing values, rather than setting them
