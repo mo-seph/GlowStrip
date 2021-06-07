@@ -193,10 +193,28 @@ public:
   virtual void show();
   virtual void init() {};
 
+  /* Starts a block of pixels. Each call to addPixel will
+  set the colour and move to the next one. Scale determines
+  how many LEDs are used for each pixel */
+  void startPixels(int position,int scale = 1) {
+    currentPosition = position;
+    pixelScale = scale;
+  }
+  void addPixel(FRGBW color,bool additive=false) {
+    for( int i = 0; i < pixelScale; i++ ) {
+      if( additive )  addRGBW(currentPosition, color);
+      else setRGBW(currentPosition, color);
+      currentPosition++;
+    }
+  }
+
+
 protected:
   int numLeds;
   FRGBW* current;
   float brightness = 1.0;
+  int currentPosition = 0;
+  int pixelScale = 1;
 };
 
 /*

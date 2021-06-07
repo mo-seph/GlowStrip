@@ -41,7 +41,7 @@ public:
   }
 
   inline int fromFloat(float v) {
-    return min(max(v * 255.0, 0), 255);
+    return min(max(v * 255.0, 0.0), 255.0);
   }
 
 protected:
