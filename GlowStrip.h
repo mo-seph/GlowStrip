@@ -187,6 +187,10 @@ public:
 
   int length() {return numLeds;};
 
+  int positionToPixels( float position ) {
+    return (int)(position * numLeds );
+  }
+
   /* Main functions to rewrite for an implementation */
 
   /* Uses the underlying controller to output the whole strip */
